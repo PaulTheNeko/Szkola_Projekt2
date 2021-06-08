@@ -1,6 +1,6 @@
 ﻿using System;
 // Ta głębokość by podstawowy typ mieć
-using System.Collections.Generic;
+// using System.Collections.Generic;
 
 namespace PP_Projekt_1_Tic_Tac_Toe
 {
@@ -29,7 +29,7 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public int getScore(Space player)
         {
-            return score[player];
+            return score[(int) player];
         }
 
         /* public int won(bool Player)
@@ -48,7 +48,8 @@ namespace PP_Projekt_1_Tic_Tac_Toe
     class Board
     {
         Space[,] board = new Space[3, 3];
-        Space current mobe
+        Space current = Space.O;
+
 
         // bool move()
     }
