@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HEiSn/Iksl4ipzJosDAqb4CsugP/Att2/PS+OC3J1b7Kx0oJjeHM8GJIIizavAaycU/+RmkwsLjjTvxRa6jBow==",
+  "success": true,
+  "projectFilePath": "/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/PP Projekt 1 Tic_Tac_Toe.csproj",
+  "expectedPackageFiles": [
+    "/home/neko/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

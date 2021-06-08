@@ -1,0 +1,16 @@
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.deps.json
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.runtimeconfig.json
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.runtimeconfig.dev.json
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.dll
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/ref/PP Projekt 1 Tic_Tac_Toe.dll
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/bin/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.pdb
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.csprojAssemblyReference.cache
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.GeneratedMSBuildEditorConfig.editorconfig
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.AssemblyInfoInputs.cache
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.AssemblyInfo.cs
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.csproj.CoreCompileInputs.cache
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.dll
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/ref/PP Projekt 1 Tic_Tac_Toe.dll
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.pdb
+/home/neko/Documents/Szkoła/PP Projekt 1 Tic_Tac_Toe/obj/Debug/net5.0/PP Projekt 1 Tic_Tac_Toe.genruntimeconfig.cache
