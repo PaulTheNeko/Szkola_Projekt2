@@ -37,10 +37,10 @@ namespace PP_Projekt_1_Tic_Tac_Toe
                 return score[1];
         }
 
-        public int won(bool Player)
+        /* public int won(bool Player)
         {
             
-        }
+        } */
     }
 
     class Board
