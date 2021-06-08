@@ -20,51 +20,65 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public void run()
         {
-
         }
     }
 
     class Players
     {
-        int[] score = new int[] {0, 0};
-        int ties = 0;
-        
-        public int getScore(bool player)
+        int[] score = new int[] { 0, 0, 0 };
+
+        public int getScore(Space player)
         {
-            if(player)
-                return score[0];
-            else
-                return score[1];
+            return score[player];
         }
 
         /* public int won(bool Player)
         {
             
         } */
+        Space boolToSpace(bool player)
+        {
+            if (player)
+                return Space.O;
+            else
+                return Space.X;
+        }
     }
 
     class Board
     {
+        Space[,] board = new Space[3, 3];
+        Space current mobe
 
+        // bool move()
     }
 
     class UI
     {
-
         public bool playAgain()
         {
-            while(true) {
-                        Console.Write("Nowa gra? (Y/N) ");
-                        char key = Console.ReadKey().KeyChar;
-                        Console.WriteLine();
+            while (true)
+            {
+                Console.Write("Nowa gra? (Y/N) ");
+                char key = Console.ReadKey().KeyChar;
+                Console.WriteLine();
 
-                        if(char.ToLower(key) == 'y') {
-                            return true;
-                        }
-                        if(char.ToLower(key) == 'n') {
-                            return false;
-                        }
-            };
+                if (char.ToLower(key) == 'y')
+                {
+                    return true;
+                }
+                if (char.ToLower(key) == 'n')
+                {
+                    return false;
+                }
+            }
         }
+    }
+
+    enum Space
+    {
+        Empty = 0,
+        O = 1,
+        X = 2
     }
 }
