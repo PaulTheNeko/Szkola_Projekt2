@@ -161,10 +161,10 @@ namespace PP_Projekt_1_Tic_Tac_Toe
             }
         }
 
-        /* void MovingNextAnnounce()
+        void MovingNextAnnounce()
         {
             Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
-        } */
+        }
 
         int ReadMoveKey()
         {
@@ -178,16 +178,21 @@ namespace PP_Projekt_1_Tic_Tac_Toe
             }
         }
 
+        (int, int) NumToPos(int num)
+        {
+            int x = (num - 1) % 3;
+            int y = (9 - num) / 3;
+            return (x,y);
+        }
+
         public void ReadMove()
         {
-            // MovingNextAnnounce();
-            Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
+            MovingNextAnnounce();
             while (true)
             {
                 int num = ReadMoveKey();
-                int x = (num - 1) % 3;
-                int y = (9 - num) / 3;
-                if (Move(x, y))
+                (int, int) m = NumToPos(num);
+                if (Move(m.Item1, m.Item2))
                     break;
                 else
                     Console.WriteLine("Podane pole jest już zajęte");
