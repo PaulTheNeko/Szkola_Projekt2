@@ -19,27 +19,34 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public void Run()
         {
-            bool play = true;
-            do
+            while (true)
             {
                 ui.Display();
-                ui.ReadMove();
-                Space winner = ui.Victory();
-                // Console.WriteLine(ui.Victory());
-                if (winner != Space.Empty || ui.Tie())
+                if (HandleMove_Win())
                 {
-                    players.
                     if (ui.playAgain())
                     {
                         ui.Reset();
                     }
                     else
                     {
-                        play = false;
+                        break;
                     }
                 }
-            } while (play);
+            }
             ui.Stats(players);
+        }
+
+        bool HandleMove_Win()
+        {
+            ui.ReadMove();
+            Space winner = ui.Victory();
+            if (winner != Space.Empty || ui.Tie())
+            {
+                players.Won(winner);
+                return true;
+            }
+            return false;
         }
     }
 
@@ -52,9 +59,9 @@ namespace PP_Projekt_1_Tic_Tac_Toe
             return score[(int)player];
         }
 
-        public void Won(bool Player)
+        public void Won(Space p)
         {
-            int i = (int) (Player ? Space.O : Space.X);
+            int i = (int)p;
             score[i] += 1;
         }
     }
@@ -84,7 +91,7 @@ namespace PP_Projekt_1_Tic_Tac_Toe
         public Space Victory()
         {
             if (CheckWin(1, 1) || CheckWin(1, 0) || CheckWin(0, 1) || CheckWin(-1, -1))
-                return current;
+                return current == Space.O ? Space.X : Space.O;
             return Space.Empty;
         }
 
@@ -115,12 +122,12 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public bool Tie()
         {
-            for(int i = 0; i<3; i++)
-            for(int j = 0; j<3; j++)
-            {
-                if(board[i,j] == Space.Empty)
-                    return false;
-            }
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                {
+                    if (board[i, j] == Space.Empty)
+                        return false;
+                }
 
             return true;
         }
@@ -165,48 +172,51 @@ namespace PP_Projekt_1_Tic_Tac_Toe
                 Console.WriteLine("");
                 if (y != 2)
                 {
-                    for (int x = 0; x < 3; x++)
-                    {
-                        Console.Write("---");
-                        if (x != 2)
-                            Console.Write("+");
-                    }
-                    Console.WriteLine("");
+                    Console.WriteLine("---+---+---");
                 }
+            }
+        }
+
+        void MovingNextAnnounce()
+        {
+            Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
+        }
+
+        int ReadMoveKey()
+        {
+            while(true)
+            {
+                Console.Write("Podaj pole klawiaturą numeryczną: ");
+                char key = Console.ReadKey().KeyChar;
+                Console.WriteLine("");
+                if (int.TryParse(key.ToString(), out int num))
+                    return num;
+                Console.WriteLine("Podany klawisz jest niepoprawny");
             }
         }
 
         public void ReadMove()
         {
-            Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
-            while (true)
+            MovingNextAnnounce();
+            while(true)
             {
-                Console.Write("Podaj pole klawiaturą numeryczną: ");
-                char key = Console.ReadKey().KeyChar;
-                Console.WriteLine("");
-                int num;
-                if (int.TryParse(key.ToString(), out num))
-                {
-                    int x = (num - 1) % 3;
-                    int y = (num - 1) / 3;
-                    y = 2 - y;
-                    if (Move(x, y))
-                        // Could also be break
-                        return;
-                    else
-                        Console.WriteLine("Podane pole jest już zajęte");
-                }
+            int num = ReadMoveKey();
+            int x = (num - 1) % 3;
+            int y = 2 - ((num - 1) / 3);
+            if (Move(x, y))
+                break;
+            else
+                Console.WriteLine("Podane pole jest już zajęte");
             }
-            Console.WriteLine("Podany klawisz jest niepoprawny");
         }
 
         public void Stats(Players p)
         {
-            Console.WriteLine();
-            Console.WriteLine("Podsumowanie:");
-            Console.WriteLine(" Remis: " + p.GetScore(Space.Empty));
-            Console.WriteLine(" Wygrane kółka: " + p.GetScore(Space.O));
-            Console.WriteLine(" Wygrane krzyżyka: " + p.GetScore(Space.X));
+            Console.WriteLine("\n"
+                + "Podsumowanie:" + "\n"
+                + " Remis: " + p.GetScore(Space.Empty) + "\n"
+                + " Wygrane kółka: " + p.GetScore(Space.O) + "\n"
+                + " Wygrane krzyżyka: " + p.GetScore(Space.X));
         }
 
         string RenderSpace(Space space)
