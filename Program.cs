@@ -23,16 +23,10 @@ namespace PP_Projekt_1_Tic_Tac_Toe
             {
                 ui.Display();
                 if (HandleMove_Win())
-                {
-                    if (ui.playAgain())
-                    {
-                        ui.Reset();
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
+                if (ui.playAgain())
+                    ui.Reset();
+                else
+                    break;
             }
             ui.Stats(players);
         }
@@ -106,10 +100,7 @@ namespace PP_Projekt_1_Tic_Tac_Toe
                         board[i, j] == board[i - x, j - y] &&
                         board[i, j] == board[i + x, j + y] &&
                         board[i, j] != Space.Empty
-                    )
-                    {
-                        return true;
-                    }
+                    )   return true;
                 }
 
             return false;
@@ -123,11 +114,11 @@ namespace PP_Projekt_1_Tic_Tac_Toe
         public bool Tie()
         {
             for (int i = 0; i < 3; i++)
-                for (int j = 0; j < 3; j++)
-                {
-                    if (board[i, j] == Space.Empty)
-                        return false;
-                }
+            for (int j = 0; j < 3; j++)
+            {
+                if (board[i, j] == Space.Empty)
+                    return false;
+            }
 
             return true;
         }
@@ -149,13 +140,9 @@ namespace PP_Projekt_1_Tic_Tac_Toe
                 Console.WriteLine();
 
                 if (char.ToLower(key) == 'y')
-                {
                     return true;
-                }
                 if (char.ToLower(key) == 'n')
-                {
                     return false;
-                }
             }
         }
 
@@ -170,8 +157,7 @@ namespace PP_Projekt_1_Tic_Tac_Toe
                         Console.Write("|");
                 }
                 Console.WriteLine("");
-                if (y != 2)
-                    Console.WriteLine("---+---+---");
+                if (y != 2) Console.WriteLine("---+---+---");
             }
         }
 
@@ -182,13 +168,12 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         int ReadMoveKey()
         {
-            while(true)
+            while (true)
             {
                 Console.Write("Podaj pole klawiaturą numeryczną: ");
                 char key = Console.ReadKey().KeyChar;
                 Console.WriteLine("");
-                if (int.TryParse(key.ToString(), out int num))
-                    return num;
+                if (int.TryParse(key.ToString(), out int num)) return num;
                 Console.WriteLine("Podany klawisz jest niepoprawny");
             }
         }
@@ -196,15 +181,15 @@ namespace PP_Projekt_1_Tic_Tac_Toe
         public void ReadMove()
         {
             MovingNextAnnounce();
-            while(true)
+            while (true)
             {
-            int num = ReadMoveKey();
-            int x = (num - 1) % 3;
-            int y = 2 - ((num - 1) / 3);
-            if (Move(x, y))
-                break;
-            else
-                Console.WriteLine("Podane pole jest już zajęte");
+                int num = ReadMoveKey();
+                int x = (num - 1) % 3;
+                int y = (9 - num) / 3;
+                if (Move(x, y))
+                    break;
+                else
+                    Console.WriteLine("Podane pole jest już zajęte");
             }
         }
 
