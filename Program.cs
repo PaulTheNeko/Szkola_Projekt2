@@ -161,7 +161,18 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public void Display()
         {
-            for (int y = 0; y < 3; y++) { for (int x = 0; x < 3; x++) { Console.Write(" " + RenderSpace(View(x, y)) + " "); if (x != 2) Console.Write("|"); } Console.WriteLine(""); if (y != 2) { Console.WriteLine("---+---+---"); } }
+            for (int y = 0; y < 3; y++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    Console.Write(" " + RenderSpace(View(x, y)) + " ");
+                    if (x != 2)
+                        Console.Write("|");
+                }
+                Console.WriteLine("");
+                if (y != 2)
+                    Console.WriteLine("---+---+---");
+            }
         }
 
         void MovingNextAnnounce()
