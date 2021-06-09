@@ -161,10 +161,10 @@ namespace PP_Projekt_1_Tic_Tac_Toe
             }
         }
 
-        void MovingNextAnnounce()
+        /* void MovingNextAnnounce()
         {
             Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
-        }
+        } */
 
         int ReadMoveKey()
         {
@@ -180,7 +180,8 @@ namespace PP_Projekt_1_Tic_Tac_Toe
 
         public void ReadMove()
         {
-            MovingNextAnnounce();
+            // MovingNextAnnounce();
+            Console.WriteLine("Teraz rusza się: " + RenderSpace(currentPlayer()));
             while (true)
             {
                 int num = ReadMoveKey();
